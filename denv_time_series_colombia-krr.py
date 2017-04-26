@@ -24,7 +24,7 @@ steps_ahead = 1
 f = open("denv_colombia.csv")
 data = np.loadtxt(f, delimiter=';')
 original_data = data[:, 2]
-train_data = original_data[:418]
+train_data = original_data#[:418]
 #validation_data = original_data[336:418]
 test_data = original_data[418:]
 
@@ -101,7 +101,7 @@ print("R^2: {0}".format(r2))
 mae = metrics.mean_absolute_error(Y_train[training_size:], validation_predictions)
 print("Mean Absolute Error: {0}".format(mae))
 plt.tight_layout()
-fig.savefig('Gaussian Kernel Ridge Regression Colombia [{0} steps ahead,{1} lag(s)].png'.format(steps_ahead, lags), format='png', dpi=500)
+fig.savefig('Full dataset - Gaussian Kernel Ridge Regression Colombia [{0} steps ahead,{1} lag(s)].png'.format(steps_ahead, lags), format='png', dpi=500)
 
 plt.show()
 
